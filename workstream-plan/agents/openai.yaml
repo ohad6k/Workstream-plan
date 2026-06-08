@@ -1,0 +1,4 @@
+interface:
+  display_name: "Workstream Plan"
+  short_description: "Create agent-ready implementation plans"
+  default_prompt: "Use $workstream-plan to turn this product spec into an agent-ready workstream implementation plan."
