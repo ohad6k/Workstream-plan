@@ -6,7 +6,7 @@ The core idea:
 
 > If the request is substantial, the plan should be substantial too.
 
-This skill is designed to write large Markdown planning documents from the user's text alone. It is not meant to default into API contracts, schema design, frontend/backend implementation, or production-readiness engineering specs.
+This skill writes large Markdown planning documents from the user's text alone, with a default focus on product strategy and workstreams. It keeps technical implementation details in scope only when explicitly requested.
 
 ## What It Produces
 
