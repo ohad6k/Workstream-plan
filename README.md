@@ -1,26 +1,30 @@
 # Workstream Plan Skill
 
-An agent-ready planning skill for turning product ideas, rough specs, or architecture discussions into detailed implementation workstreams.
+A long-form planning skill for turning user prompts into very detailed workstream plans.
 
 The core idea:
 
-> If implementation agents still have to guess, the plan is not done.
+> If the request is substantial, the plan should be substantial too.
 
-This skill helps Codex write build plans that include:
+This skill is designed to write large Markdown planning documents from the user's text alone. It is not meant to default into API contracts, schema design, frontend/backend implementation, or production-readiness engineering specs.
 
-- verified architecture assumptions
-- V1 scope and non-goals
-- screen-by-screen UX or flow specs
-- data models and API contracts
-- state models
-- security and privacy rules
-- entitlement and billing guardrails
-- small workstreams with owned files
-- exact tests and acceptance criteria
-- subagent execution rules
-- regression protection
+## What It Produces
 
-It now defaults to writing the full plan into a Markdown file instead of leaving the full output only in chat.
+- very detailed product plans
+- long workstream documents
+- sequencing and dependency maps
+- rollout and adoption thinking
+- risks, blockers, and fallback paths
+- broad planning depth from a short prompt
+
+## What It Avoids By Default
+
+- API contracts
+- database schemas
+- code-level architecture
+- repo audits
+- deployment plans
+- production-ready engineering specs
 
 ## Install In Codex
 
@@ -46,8 +50,6 @@ Install it by copying that file to:
 .claude/commands/workstream-plan.md
 ```
 
-Then invoke it in Claude Code as a custom command or by pasting the command contents into your session context.
-
 ## Install In Cursor
 
 This repo includes a Cursor rule adapter at `adapters/cursor/workstream-plan.mdc`.
@@ -58,30 +60,22 @@ Install it by copying that file to:
 .cursor/rules/workstream-plan.mdc
 ```
 
-Use it as a project rule or paste its contents into a project-specific Cursor rule.
-
 ## Use
 
 Invoke it directly:
 
 ```text
-Use $workstream-plan to turn this product spec into an agent-ready workstream implementation plan.
+Use $workstream-plan to create a very detailed workstream plan from this product idea and write it to a markdown file.
 ```
 
 Example:
 
 ```text
-Use $workstream-plan. I want to add a web command center to my existing CLI product. It should reuse the current backend, preserve billing limits, and split the build into subagent workstreams.
+Use $workstream-plan. I want a very detailed workstream plan for a product that helps freelance designers manage client approvals, revisions, handoff, and payments.
 ```
 
 If you want an explicit artifact path:
 
 ```text
-Use $workstream-plan and write the full plan to docs/plans/web-cockpit-master-plan.md.
+Use $workstream-plan and write the full plan to docs/plans/designer-ops-plan.md.
 ```
-
-## Why
-
-Most implementation plans are too vague for AI coding agents. They say things like "add auth", "connect provider", or "build dashboard" without exact files, contracts, tests, protected behavior, or failure states.
-
-This skill forces the plan to become an execution contract.

@@ -1,37 +1,29 @@
 # Workstream Plan
 
-Create an exhaustive, implementation-ready workstream plan from the user's product idea, spec, architecture notes, or roadmap discussion.
+Create a very long, highly detailed workstream plan from the user's text alone.
 
 Rules:
 
 - Write the full plan to a Markdown file by default.
 - If the user provides a target file path, use it.
-- If the repo already has a planning convention such as `docs/plans/` or `docs/superpowers/plans/`, reuse it.
 - Otherwise default to `docs/plans/YYYY-MM-DD-<slug>.md`.
 - Keep the chat reply short and point to the generated file.
-- Do not leave the plan only in chat unless the user explicitly asks for chat-only output.
-- Treat the plan as an execution contract, not strategy prose.
-- Verify named files, modules, exports, routes, commands, and tests before referencing them.
-- Prefer existing architecture over inventing new systems.
-- For every manual user step, convert it into a guided action with exact destination, exact value, exact setting, and exact verification behavior.
-- Break implementation into small additive workstreams with owned files, protected behavior, exact tests, dependencies, and acceptance criteria.
-- Require implementation agents to preflight repo reality before editing and report mismatches instead of silently inventing alternate architecture.
+- Do not leave the full plan only in chat unless the user explicitly asks for chat-only output.
+- Use the user's text as the source of truth.
+- Keep the plan product-facing and workstream-based.
+- Do not inspect repo structure or invent technical architecture unless the user explicitly asks.
+- Avoid API contracts, schema definitions, frontend/backend breakdowns, production-readiness specs, and file-level code tasks by default.
+- Expand the document aggressively when the request is broad.
 
 Required plan sections:
 
 1. Title and objective
-2. Product promise
-3. V1 scope and non-goals
-4. Verified current architecture
-5. Architecture decision
-6. UX or flow spec
-7. Data models and state models
-8. Security/privacy rules
-9. Workstream dependency map
-10. Workstreams, one by one
-11. Agent execution rules
-12. Regression protection rules
-13. Acceptance criteria
-14. Test plan
-15. Rollout plan
-16. Risks and open questions
+2. Product vision and outcome
+3. Scope and non-goals
+4. User flows
+5. Workstream map
+6. Detailed workstreams
+7. Dependencies and sequencing
+8. Risks and mitigation
+9. Rollout and adoption
+10. Open questions and decision log
