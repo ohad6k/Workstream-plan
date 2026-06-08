@@ -17,15 +17,6 @@ This skill is designed to write large Markdown planning documents from the user'
 - risks, blockers, and fallback paths
 - broad planning depth from a short prompt
 
-## What It Avoids By Default
-
-- API contracts
-- database schemas
-- code-level architecture
-- repo audits
-- deployment plans
-- production-ready engineering specs
-
 ## Install In Codex
 
 Copy the `workstream-plan` folder into your Codex skills directory:
