@@ -2,6 +2,25 @@
 
 Use this template for substantial product or engineering plans. Delete sections only when they are genuinely irrelevant.
 
+## 0. Output Artifact
+
+Write the full plan to a Markdown file.
+
+At the top of the file, include:
+
+- plan title
+- date
+- owner or requesting context if relevant
+- objective
+- status: `draft`, `ready for review`, or `approved`
+
+If the user did not provide a path, prefer:
+
+- existing repo planning convention, if one exists
+- otherwise `docs/plans/YYYY-MM-DD-<slug>.md`
+
+The chat response should summarize the artifact and point to the file path instead of duplicating the full plan inline.
+
 ## 1. Title
 
 `<Product/Feature Name> Agent-Ready Workstream Plan`

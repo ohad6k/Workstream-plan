@@ -1,0 +1,65 @@
+---
+description: Write exhaustive, agent-ready workstream plans to a markdown file by default.
+globs:
+alwaysApply: false
+---
+
+When asked to create a master plan, implementation plan, workstream plan, build plan, agent-ready plan, or phased execution plan:
+
+- Write the full plan to a Markdown file by default.
+- If the user gives a target path, use it.
+- If the repo already has a planning convention such as `docs/plans/` or `docs/superpowers/plans/`, reuse it.
+- Otherwise default to `docs/plans/YYYY-MM-DD-<slug>.md`.
+- Keep the chat response short and point to the created file.
+- Do not leave the full plan only in chat unless the user explicitly asks for chat-only output.
+
+Treat the plan as an execution contract.
+
+Every major requirement must answer:
+
+- what will be built
+- where it will live
+- what existing code must be reused
+- what must not be changed
+- which workstream owns it
+- which tests prove it
+- which risks remain
+- what agents should do if repo reality differs from the plan
+
+Before referencing files, functions, exports, routes, commands, or tests, verify they exist.
+
+Prefer existing architecture over inventing new systems.
+
+Break the implementation into additive workstreams. Each workstream must include:
+
+- objective
+- preflight checks
+- owned files
+- read-first files
+- protected behavior
+- implementation steps
+- data/contracts
+- tests
+- acceptance criteria
+- dependencies
+- risks or known gaps
+- report format
+
+Required plan sections:
+
+1. Title and objective
+2. Product promise
+3. V1 scope and non-goals
+4. Verified current architecture
+5. Architecture decision
+6. UX or flow spec
+7. Data models and state models
+8. Security/privacy rules
+9. Workstream dependency map
+10. Workstreams
+11. Agent execution rules
+12. Regression protection rules
+13. Acceptance criteria
+14. Test plan
+15. Rollout plan
+16. Risks and open questions

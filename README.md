@@ -20,7 +20,9 @@ This skill helps Codex write build plans that include:
 - subagent execution rules
 - regression protection
 
-## Install
+It now defaults to writing the full plan into a Markdown file instead of leaving the full output only in chat.
+
+## Install In Codex
 
 Copy the `workstream-plan` folder into your Codex skills directory:
 
@@ -34,6 +36,30 @@ On Windows:
 $env:USERPROFILE\.codex\skills\workstream-plan
 ```
 
+## Install In Claude Code
+
+This repo includes a Claude Code command adapter at `adapters/claude-code/workstream-plan.md`.
+
+Install it by copying that file to:
+
+```text
+.claude/commands/workstream-plan.md
+```
+
+Then invoke it in Claude Code as a custom command or by pasting the command contents into your session context.
+
+## Install In Cursor
+
+This repo includes a Cursor rule adapter at `adapters/cursor/workstream-plan.mdc`.
+
+Install it by copying that file to:
+
+```text
+.cursor/rules/workstream-plan.mdc
+```
+
+Use it as a project rule or paste its contents into a project-specific Cursor rule.
+
 ## Use
 
 Invoke it directly:
@@ -46,6 +72,12 @@ Example:
 
 ```text
 Use $workstream-plan. I want to add a web command center to my existing CLI product. It should reuse the current backend, preserve billing limits, and split the build into subagent workstreams.
+```
+
+If you want an explicit artifact path:
+
+```text
+Use $workstream-plan and write the full plan to docs/plans/web-cockpit-master-plan.md.
 ```
 
 ## Why

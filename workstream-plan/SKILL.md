@@ -15,6 +15,23 @@ Do not optimize for shortness. For a complex product build, a plan can be thousa
 
 Write the plan as an execution contract, not as strategy prose.
 
+Default to file output, not chat-only output.
+
+Unless the user explicitly asks for chat-only output, write the full plan to a Markdown file first, then reply in chat with:
+
+- the plan file path
+- a short summary of what the plan covers
+- any blocking assumptions or open questions
+
+When choosing the file path:
+
+- If the user gave a target path, use it.
+- If the repo already has a planning convention such as `docs/plans/` or `docs/superpowers/plans/`, reuse that convention.
+- Otherwise, default to `docs/plans/YYYY-MM-DD-<slug>.md` when working in a repo.
+- If there is no obvious repo docs location, default to `<slug>-workstream-plan.md` in the current working directory.
+
+Do not keep the full plan only in chat unless the user explicitly asked for that.
+
 Every major requirement must answer:
 
 - What exactly will be built?
@@ -102,6 +119,19 @@ For substantial plans, use this order:
 16. Risks and open questions
 
 For a full template, read `references/plan-template.md`.
+
+## Output Contract
+
+Every generated plan must include these artifact behaviors:
+
+- Create or update a Markdown file containing the full plan.
+- Put the plan title at the top of the file.
+- Include the objective near the top.
+- Use Markdown headings for major sections.
+- Make the file directly usable by implementation agents without requiring chat history.
+- Keep any short chat response secondary to the file artifact.
+
+If the user asks for "plan mode", "write the plan", "make a spec", "make a master plan", or similar, interpret that as a file-writing task by default.
 
 ## Workstream Requirements
 
