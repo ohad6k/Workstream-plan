@@ -95,9 +95,9 @@ For each workstream include:
 - decisions to make early
 - decisions to defer
 
-## 10. Exclusions
+## 10. Technical Depth (On Demand)
 
-By default do not include:
+Keep the core plan implementation-neutral by default, and include technical implementation depth only when the user requests it:
 
 - API contracts
 - schema definitions

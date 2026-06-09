@@ -1,6 +1,6 @@
 ---
 name: workstream-plan
-description: Create very long, highly detailed workstream plans from the user's text only. Use when the user wants a master plan, phased plan, big plan, strategy plan, workstream plan, or execution outline that is rich in scope, sequencing, dependencies, risks, rollout, and ownership, but not technical production-ready specs unless explicitly requested.
+description: Create very long, highly detailed workstream plans from the user's text only. Use when the user wants a master plan, phased plan, big plan, strategy plan, workstream plan, or execution outline rich in scope, sequencing, dependencies, risks, rollout, and ownership, with technical implementation depth only on explicit request.
 ---
 
 # Workstream Plan
@@ -17,7 +17,7 @@ Use the user's text as the primary source of truth.
 
 Do not inspect the repo, infer architecture from code, or introduce product-specific implementation details unless the user explicitly asks for that.
 
-Do not turn this skill into a production-readiness spec by default.
+Keep the focus on product planning and execution coordination by default; include production-readiness execution detail only if requested.
 
 ## Output Contract
 
@@ -45,22 +45,27 @@ Produce plans that are:
 - rich in user outcomes, failure cases, and open questions
 - readable by humans without prior context
 
-## What This Skill Should Avoid By Default
+## Default Scope
 
-Do not include these unless the user explicitly asks:
+Default to high-level product planning:
+
+- strategy and outcomes
+- workstream sequencing
+- dependencies and sequencing
+- risks and mitigation
+- rollout and adoption
+- owner and decision framing
+
+When a user asks for technical depth, include implementation-focused sections as needed:
 
 - API contracts
-- database schemas
+- schemas and data models
 - frontend/backend architecture
 - provider integration details
-- deployment plans
-- production-readiness checklists
-- file-level code tasks
-- exact tests or command lists
-- repo audits
-- technical implementation contracts
+- deployment and verification plans
+- file-level work and test/checklist coverage
 
-This skill is for large strategic product plans with workstreams, not for technical production specs by default.
+Do not invent repo-specific implementation details unless requested.
 
 ## Required Plan Shape
 

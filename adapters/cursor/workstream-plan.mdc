@@ -13,7 +13,8 @@ When asked to create a master plan, workstream plan, strategy plan, or phased pr
 - Do not leave the full plan only in chat unless the user explicitly asks for chat-only output.
 - Use the user's text as the source of truth.
 - Default to vendor- and stack-neutral product planning.
-- Do not include API contracts, frontend/backend breakdowns, production-readiness specs, or file-level execution details by default.
+- Keep the plan implementation-neutral by default.
+- Include API contracts, frontend/backend breakdowns, deployment/verification details, and file-level execution details only when the user explicitly asks for technical depth.
 - Expand the plan aggressively when the request is broad.
 
 Treat the plan as a long-form workstream document.

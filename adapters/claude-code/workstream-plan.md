@@ -11,8 +11,8 @@ Rules:
 - Do not leave the full plan only in chat unless the user explicitly asks for chat-only output.
 - Use the user's text as the source of truth.
 - Keep the plan product-facing and workstream-based.
-- Do not inspect repo structure or invent technical architecture unless the user explicitly asks.
-- Avoid API contracts, schema definitions, frontend/backend breakdowns, production-readiness specs, and file-level code tasks by default.
+- Keep the plan implementation-neutral by default.
+- Include API contracts, schema definitions, architecture, and file-level execution details only when the user explicitly asks for technical depth.
 - Expand the document aggressively when the request is broad.
 
 Required plan sections:
